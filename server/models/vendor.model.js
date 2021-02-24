@@ -24,10 +24,10 @@ const vendor = (sequelize,DataTypes) => {
           },
         ]
       });
-    //   vendor.associate = models => {
-    //     vendor.hasMany(models.billTopup,{foreignKey: 'bito_vendor_name', onDelete: 'CASCADE'});
-    //     vendor.hasMany(models.billTopup,{foreignKey: 'veru_vendor_name', onDelete: 'CASCADE'});
-    // };
+      vendor.associate = models => {
+        vendor.hasMany(models.billTopup,{foreignKey: 'bito_vendor_name', onDelete: 'CASCADE'});
+        vendor.hasMany(models.vendorRule,{foreignKey: 'veru_vendor_name', onDelete: 'CASCADE'});
+    };
     return vendor;
 
     

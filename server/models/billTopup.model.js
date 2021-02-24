@@ -70,11 +70,11 @@ const billTopup = (sequelize,DataTypes) => {
         ]
       });
 
-      // billTopup.associate = models => {
+      billTopup.associate = models => {
       //   billTopup.belongsTo(models.account,{foreignKey : 'bito_acco_id'});
-      //   billTopup.belongsTo(models.vendor,{foreignKey : 'bito_vendor_name'});
+        billTopup.belongsTo(models.vendor,{foreignKey : 'bito_vendor_name'});
       //   billTopup.belongsTo(models.walletTransaction,{foreignKey : 'bito_watr_id'});
-      // };
+      };
       return billTopup;
 }
 

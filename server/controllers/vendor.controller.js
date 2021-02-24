@@ -1,5 +1,11 @@
 const readVendor = async (req, res) => {
     const vendor = await req.context.models.vendor.findAll(
+      {
+        include: [{
+            model: req.context.models.vendorRule
+            // model: req.context.models.billTopup
+        }]
+      }
     );
     return res.send(vendor);
 };

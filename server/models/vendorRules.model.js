@@ -33,9 +33,9 @@ const vendorRule = (sequelize,DataTypes) => {
           },
         ]
       });
-      // vendorRule.associate = models => {
-      //   vendorRule.belongsTo(models.vendor,{foreignKey : 'veru_vendor_name'});
-      // }
+      vendorRule.associate = models => {
+        vendorRule.belongsTo(models.vendor,{foreignKey : 'veru_vendor_name'});
+      }
 
       return vendorRule;
     
